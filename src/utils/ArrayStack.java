@@ -28,4 +28,9 @@ public class ArrayStack  implements IArrayStack{
     public boolean isEmpty() {
         return false;
     }
+
+    @Override
+    public int size() {
+        return 0;
+    }
 }

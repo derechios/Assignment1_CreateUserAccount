@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import model.User;
 import model.UserDB;
 import model.UserIO;
+import utils.LinkedListStack;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -26,7 +27,10 @@ public class LoginJavaFXView extends Application {
 
     public void loadUserDB() {
         try {
-            UserDB.setUsers((ArrayList <User>)UserIO.readUsers());
+            //ArrayList
+            //UserDB.setUsers((ArrayList <User>)UserIO.readUsers());
+            //LinkedListStack
+            UserDB.setUsers((LinkedListStack<User>)UserIO.readUsers());
         } catch (IOException e) {
             System.err.print("Fail to open/read UserDB.dat file.");
         } catch (ClassNotFoundException e) {

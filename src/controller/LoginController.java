@@ -19,6 +19,7 @@ public class LoginController {
     @FXML
     PasswordField pw;
 
+    boolean exist=false;
     public void authenticate() {
         //iterate thru the userDB to find if username exists
         for(int i=0; i<UserDB.getUsers().size(); i++) {
@@ -26,8 +27,10 @@ public class LoginController {
             if (uname.getText().equals(UserDB.getUsers().get(i).getUserName())) {
                 //&& pw.getText().equals(UserDB.getUsers().get(i).getPassword()
                 System.out.println("Welcome " +uname.getText());
+                exist = true;
             }
         }
+
     }
 
     public void openSignupView() throws IOException {
