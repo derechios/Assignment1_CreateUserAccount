@@ -1,25 +1,26 @@
 package utils;
 
-import Exceptions.EmptyListException;
-import org.junit.Test;
+import Exceptions.UnderflowException;
 
 /**
  * Created by tkanchanawanchai6403 on 7/6/2016.
  */
-public class LinkedListStack <T> implements IStack<T>{
+public class LinkedListStack<T> implements ILinkedListStack<T> {
     private LinkedListNode<T> top;
     private int numElement=0;
     @Override
-    public T top() throws EmptyListException {
+    public T top() throws UnderflowException {
         if(isEmpty()) {
-            throw new EmptyListException("Cannot top an empty stack!");
+            throw new UnderflowException("Cannot top an empty stack!");
         }
-
         return top.getElement();
     }
 
     @Override
-    public T pop() {
+    public T pop() throws UnderflowException {
+        if (isEmpty()) {
+            throw new UnderflowException("Cannot top an empty stack!");
+        }
         T element = top.getElement();
         top = top.getPointer();
         return element;

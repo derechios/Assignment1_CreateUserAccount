@@ -1,8 +1,12 @@
 package utils;
 
+import Exceptions.OverflowException;
+
 /**
  * Created by tkanchanawanchai6403 on 7/6/2016.
  */
-public interface IArrayStack<T> extends IStack<T> {
-    public boolean isFull();
+interface IArrayStack<T> extends IStack<T> {
+    void push(T element) throws OverflowException;
+
+    boolean isFull();
 }

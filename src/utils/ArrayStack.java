@@ -1,27 +1,31 @@
 package utils;
 
+import Exceptions.OverflowException;
+import Exceptions.UnderflowException;
+
 /**
  * Created by tkanchanawanchai6403 on 7/6/2016.
  */
-public class ArrayStack  implements IArrayStack{
+public class ArrayStack<T> implements IArrayStack<T> {
+
+    @Override
+    public void push(T element) throws OverflowException {
+
+    }
+
     @Override
     public boolean isFull() {
         return false;
     }
 
     @Override
-    public Object top() {
+    public T top() throws UnderflowException {
         return null;
     }
 
     @Override
-    public Object pop() {
+    public T pop() throws UnderflowException {
         return null;
-    }
-
-    @Override
-    public void push(Object element) {
-
     }
 
     @Override

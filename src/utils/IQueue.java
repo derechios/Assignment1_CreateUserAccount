@@ -1,10 +1,14 @@
 package utils;
 
+import Exceptions.UnderflowException;
+
 /**
  * Created by tkanchanawanchai6403 on 7/6/2016.
  */
-public interface IQueue <T>{
-    public void enqueue(T element);
-    public T dequeue();
-    public boolean isEmpty();
+interface IQueue<T> {
+    T dequeue() throws UnderflowException;
+
+    boolean isEmpty();
+
+    int size();
 }
