@@ -1,8 +1,5 @@
 package model;
 
-import utils.ArrayQueue;
-import utils.LinkedListStack;
-
 import java.util.ArrayList;
 
 /**
@@ -10,7 +7,7 @@ import java.util.ArrayList;
  */
 public class UserDB {
 
-    private static LinkedListStack<User> users = new LinkedListStack<>();
+  /*  private static LinkedListStack<User> users = new LinkedListStack<>();
 
     public static LinkedListStack<User> getUsers() {
             return users;
@@ -18,11 +15,11 @@ public class UserDB {
 
     public static void setUsers(LinkedListStack<User> users) {
             UserDB.users = users;
-    }
+    }*/
 
 //
 //    private static ArrayQueue<User> users = new ArrayQueue<User>();
-/*    private static ArrayList <User> users = new ArrayList<User>();
+private static ArrayList<User> users = new ArrayList<User>();
 
     public static ArrayList<User> getUsers() {
         return users;
@@ -30,5 +27,5 @@ public class UserDB {
 
     public static void setUsers(ArrayList<User> users) {
         UserDB.users = users;
-    }*/
+    }
 }

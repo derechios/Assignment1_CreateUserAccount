@@ -8,13 +8,15 @@ import javafx.stage.Stage;
 import model.User;
 import model.UserDB;
 import model.UserIO;
-import utils.LinkedListStack;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class LoginJavaFXView extends Application {
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -28,17 +30,13 @@ public class LoginJavaFXView extends Application {
     public void loadUserDB() {
         try {
             //ArrayList
-            //UserDB.setUsers((ArrayList <User>)UserIO.readUsers());
+            UserDB.setUsers((ArrayList<User>) UserIO.readUsers());
             //LinkedListStack
-            UserDB.setUsers((LinkedListStack<User>)UserIO.readUsers());
+            //UserDB.setUsers((LinkedListStack<User>)UserIO.readUsers());
         } catch (IOException e) {
             System.err.print("Fail to open/read UserDB.dat file.");
         } catch (ClassNotFoundException e) {
             System.err.print("Fail reading and casting the UserDB dues to User class issue!");
         }
     }
-
-    public static void main(String[] args) {
-    launch(args);
-}
 }

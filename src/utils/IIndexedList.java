@@ -4,11 +4,13 @@ package utils;
  * Created by tkanchanawanchai6403 on 7/11/2016.
  */
 interface IIndexedList<T> extends IList<T> {
-    void add(T element, int index);
+    void add(int index, T element);
 
-    void set(T element, int index);
+    T set(int index, T element);
 
-    T remove(int index);
+    T get(int index);
 
     int indexOf(T element);
+
+    T remove(int index);
 }

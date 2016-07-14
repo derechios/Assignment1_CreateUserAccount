@@ -4,19 +4,21 @@ package utils;
  * Created by tkanchanawanchai6403 on 7/11/2016.
  */
 interface IList<T> {
-    void add(T element);
+    int size();
 
-    T remove(T element);
+    void add(T element);
 
     boolean contains(T element);
 
-    boolean isEmpty();
-
-    int size();
+    T remove(T element);
 
     T get(T element);
+
+    String toString();
 
     void reset();
 
     T getNext();
+
+    boolean isEmpty();
 }

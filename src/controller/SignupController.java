@@ -1,7 +1,6 @@
 package controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
@@ -28,7 +27,7 @@ public class SignupController {
     public void createAccount() {
         if(pw.getText().equals(confirmpw.getText())) {
             User user = new User(uname.getText(),pw.getText());
-            UserDB.getUsers().push(user);
+            UserDB.getUsers().add(user);
             try {
                 UserIO.writeUsers(UserDB.getUsers());
             } catch (IOException e) {

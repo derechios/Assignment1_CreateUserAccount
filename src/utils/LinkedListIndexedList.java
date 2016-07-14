@@ -4,18 +4,19 @@ package utils;
  * Created by tkanchanawanchai6403 on 7/11/2016.
  */
 public class LinkedListIndexedList<T> implements IIndexedList<T> {
+
     @Override
-    public void add(T element, int index) {
+    public void add(int index, T element) {
 
     }
 
     @Override
-    public void set(T element, int index) {
-
+    public T set(int index, T element) {
+        return null;
     }
 
     @Override
-    public T remove(int index) {
+    public T get(int index) {
         return null;
     }
 
@@ -25,13 +26,18 @@ public class LinkedListIndexedList<T> implements IIndexedList<T> {
     }
 
     @Override
-    public void add(T element) {
-
+    public T remove(int index) {
+        return null;
     }
 
     @Override
-    public T remove(T element) {
-        return null;
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public void add(T element) {
+
     }
 
     @Override
@@ -40,13 +46,8 @@ public class LinkedListIndexedList<T> implements IIndexedList<T> {
     }
 
     @Override
-    public boolean isEmpty() {
-        return false;
-    }
-
-    @Override
-    public int size() {
-        return 0;
+    public T remove(T element) {
+        return null;
     }
 
     @Override
@@ -62,5 +63,10 @@ public class LinkedListIndexedList<T> implements IIndexedList<T> {
     @Override
     public T getNext() {
         return null;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
     }
 }
