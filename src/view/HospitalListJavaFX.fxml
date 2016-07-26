@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.19597989949748743" maxHeight="-Infinity"
+           maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0"
+           prefWidth="600.0" xmlns="http://javafx.com/javafx/null" fx:controller="controller.HospitalListController">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <children>
+                <TextField layoutX="14.0" layoutY="25.0" prefHeight="25.0" prefWidth="542.0"/>
+                <Label layoutX="556.0" layoutY="21.0" prefHeight="31.0" prefWidth="28.0" text="Label"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <children>
+                <TableView prefHeight="317.0" prefWidth="598.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="Name"/>
+                        <TableColumn prefWidth="75.0" text="Street Address"/>
+                        <TableColumn prefWidth="75.0" text="City"/>
+                        <TableColumn prefWidth="75.0" text="State"/>
+                        <TableColumn prefWidth="75.0" text="Zip"/>
+                        <TableColumn prefWidth="75.0" text="Latitude"/>
+                        <TableColumn prefWidth="75.0" text="Longitue"/>
+                        <TableColumn prefWidth="75.0" text="Phone Number"/>
+                        <TableColumn prefWidth="75.0" text="Photo"/>
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </items>
+</SplitPane>
