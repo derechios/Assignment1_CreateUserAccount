@@ -5,7 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.SplitPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import model.Hospital;
@@ -30,6 +30,7 @@ public class HospitalListJavaFXView {
     private String phoneNo;
     private String photo;
     private ObservableList<Hospital> hospitalData = FXCollections.observableArrayList();
+    private BinarySearchTree<Hospital> hospitalBSTree;
     private BorderPane rootLayout;
 
     public HospitalListJavaFXView() throws IOException {
@@ -42,6 +43,10 @@ public class HospitalListJavaFXView {
         //  Scene hospitalListScene = new Scene(hospitalListView, 575, 575);
         // hospitalListStage.setScene(hospitalListScene);
         // hospitalListStage.show();
+    }
+
+    public BinarySearchTree<Hospital> getHospitalBSTree() {
+        return hospitalBSTree;
     }
 
     private void initRootLayout() {
@@ -61,7 +66,7 @@ public class HospitalListJavaFXView {
     }
 
     public void loadHospital() {
-        BinarySearchTree<Hospital> hospitalBSTree = new BinarySearchTree<Hospital>();
+        hospitalBSTree = new BinarySearchTree<Hospital>();
         List hospitalList = null;
         try {
             hospitalList = ReadExcelFile.excelReader("HospitalList.xls");
@@ -81,8 +86,8 @@ public class HospitalListJavaFXView {
             zip = String.valueOf(record.get(4));
             latitude = String.valueOf(record.get(5));
             longitude = String.valueOf(record.get(6));
-            photo = String.valueOf(record.get(7));
-
+            phoneNo = String.valueOf(record.get(7));
+            photo = String.valueOf(record.get(8));
             Hospital hospital = new Hospital(name, streetAddress, city, state, zip, latitude, longitude, phoneNo, photo);
             hospitalBSTree.add(hospital);
             hospitalData.add(hospital);
@@ -94,10 +99,10 @@ public class HospitalListJavaFXView {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(HospitalListJavaFXView.class.getResource("HospitalListJavaFX.fxml"));
-            AnchorPane personOverview = loader.load();
+            SplitPane hospitalOverview = loader.load();
 
             // Set person overview into the center of root layout.
-            rootLayout.setCenter(personOverview);
+            rootLayout.setCenter(hospitalOverview);
 
             // Give the controller access to the main app.
             HospitalListController controller = loader.getController();
@@ -112,7 +117,11 @@ public class HospitalListJavaFXView {
      *
      * @return
      */
-    public ObservableList<Hospital> getPersonData() {
+    public ObservableList<Hospital> getHospitalData() {
         return hospitalData;
+    }
+
+    public void setHospitalData(ObservableList<Hospital> hospitalData) {
+        this.hospitalData = hospitalData;
     }
 }

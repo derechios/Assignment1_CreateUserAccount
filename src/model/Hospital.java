@@ -31,6 +31,17 @@ public class Hospital implements Comparable<Hospital>, Serializable {
         this.photo = new SimpleStringProperty("");
     }
 
+    public Hospital(String latitude, String longitude) {
+        this.name = new SimpleStringProperty("");
+        this.streetAddress = new SimpleStringProperty("");
+        this.city = new SimpleStringProperty("");
+        this.state = new SimpleStringProperty("");
+        this.zip = new SimpleStringProperty("");
+        this.latitude = new SimpleStringProperty(latitude);
+        this.longitude = new SimpleStringProperty(longitude);
+        this.phoneNo = new SimpleStringProperty("");
+        this.photo = new SimpleStringProperty("");
+    }
     public Hospital(String name, String streetAddress, String city, String state, String zip, String latitude, String longitude, String phoneNo, String photo) {
         this.name = new SimpleStringProperty(name);
         this.streetAddress = new SimpleStringProperty(streetAddress);
